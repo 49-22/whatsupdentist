@@ -153,10 +153,19 @@ function Header() {
                 <Link className="nav-link text-white mx-2" to="/">Home</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('feature')}>How it works</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('intro')}>About Us</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('client')}>Testimonials</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('service')}>Services</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('newsletter')}>Contact</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-white mx-2" to="/booking">Slot Booking</Link>

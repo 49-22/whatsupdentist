@@ -7,7 +7,7 @@ function Booking() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: mobileNumber.match(/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/) ? mobileNumber : '', // TODO: Verify validation 
+    phone: (mobileNumber && mobileNumber.match(/^((\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4})$/)) ? mobileNumber : '', // guard against null
     appointmentDate: '',
     appointmentTime: '',
     age: '',
