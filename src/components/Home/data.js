@@ -4,10 +4,10 @@ import featureIcon3 from '../../images/f1.png';
 import featureIcon4 from '../../images/f2.png';
 
 export const features = [
-  { icon: featureIcon1, title: 'Convenient Consultations', bgColor: '#c8def4' },
-  { icon: featureIcon2, title: 'Expert Second Opinion', bgColor: '#f8e1be' },
-  { icon: featureIcon3, title: '24/7 Emergency Advice', bgColor: '#cae9f4' },
-  { icon: featureIcon4, title: 'All time Personalized Care', bgColor: '#e9caf9' }
+  { icon: featureIcon1, title: 'Virtual first consultation', bgColor: '#c8def4' },
+  { icon: featureIcon2, title: 'Expert second opinion', bgColor: '#f8e1be' },
+  { icon: featureIcon3, title: 'Affordable treatment guidance', bgColor: '#cae9f4' },
+  { icon: featureIcon4, title: 'Personalized care plan', bgColor: '#e9caf9' }
 ];
 
 export const testimonials = [

@@ -227,6 +227,7 @@ import HeroSection from './HeroSection';
 import IntroSection from './IntroSection';
 import ServiceSection from './ServiceSection';
 import { FeatureSection } from './FeatureCard';
+import TrustSection from './TrustSection';
 import { TestimonialSection } from './TestimonialCard';
 import NewsletterSection from './NewsletterSection';
 
@@ -236,6 +237,7 @@ function Home() {
       <HeroSection />
       <IntroSection />
       <FeatureSection />
+      <TrustSection />
       <ServiceSection />
       <TestimonialSection />
       <NewsletterSection />

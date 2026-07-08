@@ -31,6 +31,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home/index';
 import Booking from './components/Booking';
+import InternationalPatients from './components/InternationalPatients';
 import Footer from './components/Footer';
 import './App.css';
 import './style/darkMode.css';
@@ -69,6 +70,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/international-patients" element={<InternationalPatients />} />
           </Routes>
           <Footer />
         </div>

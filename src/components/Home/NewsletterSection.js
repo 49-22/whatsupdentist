@@ -64,10 +64,10 @@ function NewsletterSection() {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6 text-start text-md-start text-white mb-3">
-            <h3 style={{ fontSize: '40px', fontWeight: 700 }}>Get in touch with us</h3>
+            <h3 style={{ fontSize: '40px', fontWeight: 700 }}>Start with a consultation</h3>
             <p style={{ fontSize: '15px' }}>
-              Book your consultation at just 
-              <span style={{ fontSize: '25px', fontWeight: 700, color: '#cce7d0' }}> INR 100</span>
+              Book your first virtual consultation for just 
+              <span style={{ fontSize: '25px', fontWeight: 700, color: '#cce7d0' }}> ₹100</span>
             </p>
           </div>
           <div className="col-md-6">
@@ -100,7 +100,7 @@ function NewsletterSection() {
                   borderBottomLeftRadius: 2 
                 }}
               >
-                Book Now
+                Book now
               </Link>
             </div>
           </div>

@@ -94,7 +94,18 @@ function IntroSection() {
   const introImageRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const image = introImageRef.current;
+
+    if (!image) {
+      return undefined;
+    }
+
+    if (typeof window === 'undefined' || typeof window.IntersectionObserver === 'undefined') {
+      image.classList.add('slide-in');
+      return undefined;
+    }
+
+    const observer = new window.IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('slide-in');
@@ -104,14 +115,10 @@ function IntroSection() {
       { threshold: 0.1 }
     );
 
-    if (introImageRef.current) {
-      observer.observe(introImageRef.current);
-    }
+    observer.observe(image);
 
     return () => {
-      if (introImageRef.current) {
-        observer.unobserve(introImageRef.current);
-      }
+      observer.unobserve(image);
     };
   }, []);
 
@@ -130,9 +137,9 @@ function IntroSection() {
             />
           </div>
           <div className="col-12 col-lg-8 text-center text-lg-start">
-            <h3 className="fs-1 mb-3">Let me Introduce <br className="d-none d-lg-inline" /> Myself</h3>
+            <h3 className="fs-1 mb-3">Modern dental care, guided by experience</h3>
             <p className="fs-5 mt-3" style={{ lineHeight: 1.8 }}>
-              I am <i style={{ color: '#3b6ea0' }}>Dr. Darahasa</i>, a dedicated dental professional with over 5 years of experience in providing exceptional dental care. I completed my studies at the prestigious Kamineni Institute of Dental Science, Nalgonda. My commitment to excellence and passion for helping patients achieve optimal oral health have established me as a trusted and good dentist. Whether you need a second opinion or are experiencing dental issues that prevent you from visiting a clinic, I am here to offer expert advice and personalized care through the convenience of Online Consultation.
+              I am <i style={{ color: '#3b6ea0' }}>Dr. Darahasa</i>, a dental professional focused on making quality care easier to access. Through virtual consultations, patients receive a practical first opinion, a treatment roadmap, and guidance on the best next step — whether that means a simple follow-up or connecting them with a trusted clinic for a longer-term treatment plan.
             </p>
           </div>
         </div>

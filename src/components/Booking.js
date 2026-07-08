@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 function Booking() {
-  const [params] = useSearchParams()
-  const mobileNumber = params.get('mobileNumber')
+  const [params] = useSearchParams();
+  const mobileNumber = params.get('mobileNumber');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: (mobileNumber && mobileNumber.match(/^((\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4})$/)) ? mobileNumber : '', // guard against null
+    phone: (mobileNumber && mobileNumber.match(/^((\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4})$/)) ? mobileNumber : '',
     appointmentDate: '',
     appointmentTime: '',
     age: '',
-    gender: ''
+    gender: '',
+    concern: ''
   });
 
   const handleChange = (e) => {
@@ -20,9 +21,9 @@ function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, phone, appointmentDate, appointmentTime, age, gender, email } = formData;
+    const { name, phone, appointmentDate, appointmentTime, age, gender, email, concern } = formData;
 
-    if (!name || !phone || !appointmentDate || !appointmentTime || !age || !gender) {
+    if (!name || !phone || !appointmentDate || !appointmentTime || !age || !gender || !concern) {
       alert("Please fill out all required fields.");
       return;
     }
@@ -44,22 +45,23 @@ function Booking() {
       + `Date: ${appointmentDate}%0a`
       + `Time: ${appointmentTime}%0a`
       + `Age: ${age}%0a`
-      + `Gender: ${gender}`;
+      + `Gender: ${gender}%0a`
+      + `Concern: ${concern}`;
 
     window.open(url, '_blank').focus();
   };
 
   return (
     
-    <section id="date-input" className="container-fluid">
-      <div style={{ marginTop: '15%', marginLeft: '15%', marginBottom: '5%' }}>
-        <h1>Dental Check-Up Booking</h1>
-        <p>Check out our availability and book the date and time that works for you</p>
+    <section id="date-input" className="container-fluid py-5">
+      <div className="booking-hero">
+        <h1>Start your dental consultation</h1>
+        <p>Tell us about your concern, your preferred slot, and your contact details. We will help you move to the next best step with clarity.</p>
       </div>
-      <form className="form-section mx-auto" style={{ maxWidth: '70%' }} onSubmit={handleSubmit}>
-        <h1 id="cd">Client Details</h1>
+      <form className="form-section mx-auto booking-shell" onSubmit={handleSubmit}>
+        <h2 id="cd">Consultation details</h2>
         <hr />
-        <p>Tell us a bit about yourself</p>
+        <p className="text-muted">A concise request helps us prepare your consultation and guide you more effectively.</p>
 
         <div className="form-grid">
           <div className="input-group">
@@ -101,11 +103,27 @@ function Booking() {
               <option value="other">Other</option>
             </select>
           </div>
+
+          <div className="input-group" style={{ flexBasis: '100%' }}>
+            <label htmlFor="concern">What would you like help with?</label>
+            <textarea
+              id="concern"
+              name="concern"
+              rows="4"
+              placeholder="Share your dental concern, symptoms, or questions..."
+              required
+              onChange={handleChange}
+              style={{ minHeight: '120px', resize: 'vertical' }}
+            />
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-4 p-3" style={{ backgroundColor: '#f4f9ff', border: '1px solid #dfefff' }}>
+          <p className="mb-0 text-muted">Your request will be sent directly to our team via WhatsApp so we can follow up quickly.</p>
         </div>
 
         <div className="text-center" style={{ marginTop: '5%' }}>
-          <button type="submit" className="custom-btn mt-3">Submit</button>
-          <h3 className="redirect-message" style={{ marginTop: '5%' }}> &nbsp; NOTE : This will redirect you to WhatsApp</h3>
+          <button type="submit" className="custom-btn mt-3">Send consultation request</button>
         </div>
       </form>
     </section>

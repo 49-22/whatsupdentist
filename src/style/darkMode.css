@@ -1,31 +1,85 @@
 .dark-mode {
-    background-color: #1a202c;
-    color: #e2e8f0;
-  }
-  
-  .dark-mode .bg-light {
-    background-color: #2d3748 !important;
-  }
-  
-  .dark-mode .text-muted-foreground {
-    color: #a0aec0;
-  }
-  
-  .dark-mode .bg-primary-light {
-    background-color: #2c5282;
-  }
-  
-  .dark-mode .custom-btn {
-    background-color: #4a5568;
-    color: #e2e8f0;
-  }
-  
-  .dark-mode .form-control {
-    background-color: #2d3748;
-    color: #e2e8f0;
-    border-color: #4a5568;
-  }
-  
-  .dark-mode #newsletter {
-    background-color: #2c5282;
-  }
+  background-color: #1f2937;
+  color: #e2e8f0;
+}
+
+.dark-mode body {
+  background-color: #1f2937;
+  color: #e2e8f0;
+}
+
+.dark-mode .bg-light {
+  background-color: #111827 !important;
+}
+
+.dark-mode .text-muted,
+.dark-mode .text-muted-foreground,
+.dark-mode .text-secondary,
+.dark-mode .text-light,
+.dark-mode p,
+.dark-mode li,
+.dark-mode span,
+.dark-mode small {
+  color: #e2e8f0 !important;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #f8fafc !important;
+}
+
+.dark-mode .bg-primary-light,
+.dark-mode .fe-box,
+.dark-mode .cli-box,
+.dark-mode .booking-shell,
+.dark-mode .card,
+.dark-mode .hero-visual-card {
+  background-color: #1f2937 !important;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+.dark-mode .custom-btn {
+  background: linear-gradient(135deg, #ff7a59 0%, #3b6ea0 100%);
+  color: #ffffff;
+}
+
+.dark-mode .btn-outline-primary,
+.dark-mode .btn-outline-light {
+  color: #f8fafc;
+  border-color: #64748b;
+}
+
+.dark-mode .input-group input,
+.dark-mode .input-group select,
+.dark-mode .input-group textarea,
+.dark-mode .form-control {
+  background-color: #111827;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+.dark-mode .input-group input::placeholder,
+.dark-mode .input-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.dark-mode #newsletter,
+.dark-mode section {
+  background-color: transparent;
+}
+
+.dark-mode .hero-overlay-card,
+.dark-mode .hero-badge {
+  background-color: rgba(17, 24, 39, 0.95) !important;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+.dark-mode .navbar-nav .nav-link {
+  color: #f8fafc !important;
+}

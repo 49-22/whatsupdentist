@@ -153,7 +153,18 @@ function ServiceSection() {
   const serviceImageRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const image = serviceImageRef.current;
+
+    if (!image) {
+      return undefined;
+    }
+
+    if (typeof window === 'undefined' || typeof window.IntersectionObserver === 'undefined') {
+      image.classList.add('slide-in');
+      return undefined;
+    }
+
+    const observer = new window.IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('slide-in');
@@ -163,14 +174,10 @@ function ServiceSection() {
       { threshold: 0.1 }
     );
 
-    if (serviceImageRef.current) {
-      observer.observe(serviceImageRef.current);
-    }
+    observer.observe(image);
 
     return () => {
-      if (serviceImageRef.current) {
-        observer.unobserve(serviceImageRef.current);
-      }
+      observer.unobserve(image);
     };
   }, []);
 
@@ -187,11 +194,11 @@ function ServiceSection() {
             />
           </div>
           <div className="col-12 col-md-6 order-2 order-md-2 text-center text-md-start">
-            <h3 className="fs-1 mb-3">Online Consultation</h3>
+            <h3 className="fs-1 mb-3">Your first step toward better dental care</h3>
             <p className="fs-5 mt-3 " style={{ lineHeight: 2 }}>
-              At <i>WhatsUp Dentist</i>, we offer comprehensive online consultation services, providing you with expert dental care from the comfort of your home. Whether you need a second opinion or have specific dental concerns, Dr. Darahasa is here to assist through a convenient and secure online platform.
+              At <i>WhatsUp Dentist</i>, the journey begins with a focused consultation for just ₹100. Patients can share their concerns, photos, and questions in a simple process that helps create a tailored treatment recommendation and a clear way forward.
             </p>
-            <Link to="/booking" className="custom-btn mt-3 ">Book Now</Link>
+            <Link to="/booking" className="custom-btn mt-3 ">Reserve your consultation</Link>
           </div>
         </div>
       </div>

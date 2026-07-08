@@ -168,12 +168,15 @@ function Header() {
                 <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('newsletter')}>Contact</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white mx-2" to="/booking">Slot Booking</Link>
+                <Link className="nav-link text-white mx-2" to="/international-patients">For International Patients</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white mx-2" to="/booking">Book Consultation</Link>
               </li>
             </ul>
-            <button onClick={toggleNightMode} className="btn btn-outline-light ms-2">
+            {/* <button onClick={toggleNightMode} className="btn btn-outline-light ms-2">
               {nightMode ? 'Light Mode' : 'Night Mode'}
-            </button>
+            </button> */}
           </div>
         </div>
       </nav>

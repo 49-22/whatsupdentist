@@ -58,7 +58,8 @@ export function TestimonialSection() {
   return (
     <section id="client" className="py-5">
       <div className="container">
-        <h1 className="display-6 mb-4 text-center">Look What Our Clients Say</h1>
+        <h1 className="display-6 mb-4 text-center">What patients appreciate most</h1>
+        <p className="text-center text-muted mb-5">Simple guidance, clear communication, and a thoughtful path to care.</p>
         <div className="row justify-content-center text-center">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} {...testimonial} />
