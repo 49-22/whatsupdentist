@@ -256,7 +256,7 @@ function Home() {
 
         .custom-btn {
           display: inline-block;
-          padding: 10px 30px;
+          // padding: 10px 30px;
           background-color: #3b6ea0;
           color: white;
           text-decoration: none;
