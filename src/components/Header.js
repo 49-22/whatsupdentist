@@ -105,7 +105,7 @@ function Header() {
   useEffect(() => {
     const savedMode = localStorage.getItem('nightMode');
     if (savedMode) {
-      setNightMode(JSON.parse(savedMode));
+      // setNightMode(JSON.parse(savedMode));
     }
   }, []);
 
