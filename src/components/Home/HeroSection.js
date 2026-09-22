@@ -160,13 +160,14 @@ function HeroSection() {
         <div className="row justify-content-center align-items-center">
           <div className="col-12 col-lg-6 text-center text-lg-start">
             {/* <h3 className="display-4 mb-2">Hey!</h3> */}
-            <h2 className="display-5 mb-3">Smile with confidence</h2>
-            <h1 className="display-2" style={{ color: '#3b6ea0' }}>WhatsUp Dentist</h1>
-            <p className="fs-5 mb-5">Trusted virtual dental consultations from India, with a clear path to affordable treatment and a smoother recovery journey.</p>
+            <p className="eyebrow">Virtual dental care, made simple</p>
+            <h1 className="hero-title">Show us your smile.<br /><em>We’ll show you what’s next.</em></h1>
+            <p className="fs-5 mb-4">Send a short video of your dental concern and get a clear first opinion from a dentist, without the first trip to a clinic.</p>
             <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-              <Link to="/booking" className="custom-btn mt-3">Book your consultation</Link>
-              <Link to="/international-patients" className="btn btn-outline-primary mt-3 px-4 py-3">For international patients</Link>
+              <Link to="/booking" className="custom-btn">Start with ₹100</Link>
+              <a href="#video-guide" className="hero-text-link">See how to send your video <span aria-hidden="true">↓</span></a>
             </div>
+            <div className="hero-meta"><span>✓ Dentist-reviewed</span><span>✓ WhatsApp-friendly</span><span>✓ No equipment needed</span></div>
           </div>
           <div className="col-lg-6 text-center d-none d-lg-block">
             <div className="hero-visual-card slide-image" ref={heroImageRef}>

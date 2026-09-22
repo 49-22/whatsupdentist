@@ -95,33 +95,11 @@
 
 // export default Header;
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
 
 function Header() {
-  const [nightMode, setNightMode] = useState(false);
-
-  useEffect(() => {
-    const savedMode = localStorage.getItem('nightMode');
-    if (savedMode) {
-      // setNightMode(JSON.parse(savedMode));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('nightMode', JSON.stringify(nightMode));
-    if (nightMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }, [nightMode]);
-
-  const toggleNightMode = () => {
-    setNightMode(!nightMode);
-  };
-
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -130,14 +108,16 @@ function Header() {
   };
 
   return (
-    <section id="header" className={`bg-light ${nightMode ? 'dark-mode' : ''}`}>
-      <nav className={`navbar navbar-expand-lg navbar-${!nightMode ? 'light': 'dark'}`} id="nav" style={{ backgroundColor: nightMode ? '#1f2937' : '#3b6ea0', padding: '15px' }}>
+    <section id="header" className="site-header">
+      <nav className="navbar navbar-expand-lg navbar-dark" id="nav">
         <div className="container">
           {/* Logo Section */}
           <Link className="navbar-brand d-flex align-items-center" to="/">
             <div className="d-flex align-items-center">
-              <span className="fs-1 me-2" role="img" aria-label="tooth">
-                <img src={logo} alt="WhatsUp Dentist Logo" style={{ height: '100px', width: 'auto' }} className="me-2" />
+              <img src={logo} alt="WhatsUp Dentist" className="brand-logo" />
+              <span className="brand-copy">
+                <strong>WhatsUp Dentist</strong>
+                <small>Clear care. Anywhere.</small>
               </span>
             </div>
           </Link>
@@ -153,7 +133,7 @@ function Header() {
                 <Link className="nav-link text-white mx-2" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('feature')}>How it works</Link>
+                <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('video-guide')}>How it works</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-white mx-2" to="/" onClick={() => scrollToSection('intro')}>About Us</Link>
