@@ -127,12 +127,12 @@ function IntroSection() {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-4 mb-4 mb-lg-0 text-center">
-            <img 
+            <img
               ref={introImageRef}
               src={introImage}
-              id="intro-img" 
-              className="img-fluid rounded-circle mx-auto slide-image" 
-              alt="Introduction" 
+              id="intro-img"
+              className="img-fluid rounded-circle mx-auto slide-image"
+              alt="Introduction"
               style={{ maxWidth: '380px' }}
             />
           </div>
@@ -141,6 +141,10 @@ function IntroSection() {
             <p className="fs-5 mt-3" style={{ lineHeight: 1.8 }}>
               I am <i style={{ color: '#3b6ea0' }}>Dr. Darahasa</i>, a dental professional focused on making quality care easier to access. Through virtual consultations, patients receive a practical first opinion, a treatment roadmap, and guidance on the best next step — whether that means a simple follow-up or connecting them with a trusted clinic for a longer-term treatment plan.
             </p>
+            <a className='d-inline-flex align-items-center gap-2' href="https://www.linkedin.com/in/dr-darahasa/" target="_blank" rel="noreferrer">
+              <i className="fa-brands fa-linkedin" aria-hidden="true" />
+              View Dr. Darahasa's LinkedIn profile
+            </a>
           </div>
         </div>
       </div>

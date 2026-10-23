@@ -27,10 +27,24 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "WhatsUp Dentist",
-        "url": "https://whatsupdentist.com/",
-        "logo": "https://whatsupdentist.com/whatsup-dentist-logo.png"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://whatsupdentist.com/#organization",
+            "name": "WhatsUp Dentist",
+            "url": "https://whatsupdentist.com/",
+            "logo": "https://whatsupdentist.com/whatsup-dentist-logo.png",
+            "sameAs": "https://www.linkedin.com/company/whatsupdentist"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://whatsupdentist.com/#dentist",
+            "name": "Dr. Darahasa",
+            "jobTitle": "Dentist",
+            "sameAs": "https://www.linkedin.com/in/dr-darahasa/",
+            "worksFor": { "@id": "https://whatsupdentist.com/#organization" }
+          }
+        ]
       }
     </script>
   </head>
