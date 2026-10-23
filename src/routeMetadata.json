@@ -1,0 +1,17 @@
+{
+  "/": {
+    "title": "Virtual Dental Consultation | WhatsUp Dentist",
+    "description": "Get a dentist's first opinion from home. Book a virtual dental consultation for ₹100, share a short video of your concern, and receive clear next steps.",
+    "index": true
+  },
+  "/international-patients": {
+    "title": "Dental Care in India for International Patients | WhatsUp Dentist",
+    "description": "Plan dental care in India with a virtual consultation, clear treatment guidance, and help finding a suitable clinic before you travel.",
+    "index": true
+  },
+  "/booking": {
+    "title": "Book a Virtual Dental Consultation | WhatsUp Dentist",
+    "description": "Request a virtual dental consultation with WhatsUp Dentist and share your preferred appointment details.",
+    "index": false
+  }
+}

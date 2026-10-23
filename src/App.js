@@ -33,36 +33,20 @@ import Home from './components/Home/index';
 import Booking from './components/Booking';
 import InternationalPatients from './components/InternationalPatients';
 import Footer from './components/Footer';
+import routeMetadata from './routeMetadata.json';
 import './App.css';
 import './style/darkMode.css';
 
 // Create a context for the night mode
 export const NightModeContext = React.createContext();
 
-const routeMetadata = {
-  '/': {
-    title: 'Virtual Dental Consultation | WhatsUp Dentist',
-    description: "Get a dentist's first opinion from home. Book a virtual dental consultation for ₹100, share a short video of your concern, and receive clear next steps.",
-    index: true
-  },
-  '/international-patients': {
-    title: 'Dental Care in India for International Patients | WhatsUp Dentist',
-    description: 'Plan dental care in India with a virtual consultation, clear treatment guidance, and help finding a suitable clinic before you travel.',
-    index: true
-  },
-  '/booking': {
-    title: 'Book a Virtual Dental Consultation | WhatsUp Dentist',
-    description: 'Request a virtual dental consultation with WhatsUp Dentist and share your preferred appointment details.',
-    index: false
-  }
-};
-
 function RouteMetadata() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const metadata = routeMetadata[pathname] || routeMetadata['/'];
-    const canonicalUrl = `https://whatsupdentist.com${pathname === '/' ? '/' : pathname}`;
+    const route = pathname.replace(/\/+$/, '') || '/';
+    const metadata = routeMetadata[route] || routeMetadata['/'];
+    const canonicalUrl = `https://whatsupdentist.com${route === '/' ? '/' : route}`;
     document.title = metadata.title;
 
     const setMeta = (selector, attribute, value) => {

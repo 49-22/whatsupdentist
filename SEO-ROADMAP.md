@@ -11,14 +11,14 @@ Use this checklist to track technical SEO, search indexing, and the trust signal
 - [x] Allowed general web crawlers and named AI crawlers in `public/robots.txt`, and listed the sitemap there.
 - [x] Added Organization and Person structured data, connected to the supplied LinkedIn profiles.
 - [x] Added visible links to the dentist and company LinkedIn profiles.
-- [x] Added route-aware titles, descriptions, canonical URLs, and a `noindex` directive for the booking route in the React app.
+- [x] Added route-aware titles, descriptions, canonical URLs, and a `noindex` directive for the booking route in the React app, and pre-rendered route-specific metadata into production HTML.
 - [x] Confirmed the production build and existing test pass after these changes.
 
 ## Next Actions
 
 - [x] Confirmed the deployed JavaScript bundle matches the latest local production build.
 - [x] Confirmed the robots file, sitemap, homepage, international-patients page, booking page, logo, and manifest return HTTP 200 over HTTPS.
-- [ ] **High priority:** Pre-render or server-render each route so its title, description, canonical URL, and indexing instructions are in the initial HTML. A live check found that all routes currently return the homepage metadata before JavaScript runs.
+- [x] **High priority:** Pre-rendered route-specific titles, descriptions, canonical URLs, and indexing instructions into the initial HTML. Verified the deployed homepage, booking page, and international-patients page return the expected metadata before JavaScript runs.
 - [ ] Set up Google Search Console, verify domain ownership, submit the sitemap, and inspect important URLs for indexing errors.
 - [ ] Set up Bing Webmaster Tools, verify the domain, and submit the sitemap. Importing the verified Google Search Console property may be available.
 - [ ] Review crawl and indexing reports after deployment; request indexing for important pages when appropriate.
@@ -31,6 +31,6 @@ Use this checklist to track technical SEO, search indexing, and the trust signal
 
 ## Rendering Limitation
 
-This site uses a client-rendered React app. Route-specific metadata is set after JavaScript runs, so crawlers that do not render JavaScript may see the homepage metadata on other routes. The booking page's `noindex` directive is also applied by the app. Consider pre-rendering or server-side rendering so each route serves its own metadata and indexing directives in the initial HTML.
+This site uses a client-rendered React app, with route-specific metadata pre-rendered into the production HTML for the homepage, booking page, and international-patients page. The route content itself is still rendered by JavaScript. Deployments must serve each route's generated `index.html` before applying any single-page-app fallback. The booking page's `noindex` directive is present in its initial HTML.
 
 The robots file permits OpenAI's search crawler, but there is no general ChatGPT webmaster console or guarantee of inclusion. Crawl access is only one part of discoverability; useful, accurate content and reliable indexing still matter.

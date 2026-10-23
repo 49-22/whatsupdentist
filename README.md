@@ -25,6 +25,7 @@ Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
+It also creates route-specific HTML entry points for `/booking` and `/international-patients`, including their initial metadata. Deployments should serve these route directories' `index.html` files before applying any single-page-app fallback.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
