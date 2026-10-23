@@ -139,11 +139,11 @@ function IntroSection() {
           <div className="col-12 col-lg-8 text-center text-lg-start">
             <h3 className="fs-1 mb-3">Modern dental care, guided by experience</h3>
             <p className="fs-5 mt-3" style={{ lineHeight: 1.8 }}>
-              I am <i style={{ color: '#3b6ea0' }}>Dr. Darahasa</i>, a dental professional focused on making quality care easier to access. Through virtual consultations, patients receive a practical first opinion, a treatment roadmap, and guidance on the best next step — whether that means a simple follow-up or connecting them with a trusted clinic for a longer-term treatment plan.
+              I am <i style={{ color: '#3b6ea0' }}>Dr. Paladugula Darahasa</i>, a dental professional focused on making quality care easier to access. Through virtual consultations, patients receive a practical first opinion, a treatment roadmap, and guidance on the best next step — whether that means a simple follow-up or connecting them with a trusted clinic for a longer-term treatment plan.
             </p>
             <a className='d-inline-flex align-items-center gap-2' href="https://www.linkedin.com/in/dr-darahasa/" target="_blank" rel="noreferrer">
               <i className="fa-brands fa-linkedin" aria-hidden="true" />
-              View Dr. Darahasa's LinkedIn profile
+              View Dr. Paladugula Darahasa's LinkedIn profile
             </a>
           </div>
         </div>
